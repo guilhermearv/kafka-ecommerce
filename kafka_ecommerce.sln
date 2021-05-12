@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-email", "service-email\service-email.csproj", "{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-fraud-detector", "service-fraud-detector\service-fraud-detector.csproj", "{D27D0769-ABE4-4975-A60A-A8B387B35866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-log", "service-log\service-log.csproj", "{0202A53E-F073-4236-BF3D-873B4E88F195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-new-order", "service-new-order\service-new-order.csproj", "{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common-kafka", "common-kafka\common-kafka.csproj", "{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC1AEC0B-3CBD-4DC1-9266-58FC423F5419}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D27D0769-ABE4-4975-A60A-A8B387B35866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D27D0769-ABE4-4975-A60A-A8B387B35866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D27D0769-ABE4-4975-A60A-A8B387B35866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D27D0769-ABE4-4975-A60A-A8B387B35866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0202A53E-F073-4236-BF3D-873B4E88F195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0202A53E-F073-4236-BF3D-873B4E88F195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0202A53E-F073-4236-BF3D-873B4E88F195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0202A53E-F073-4236-BF3D-873B4E88F195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E616858F-80BD-4F18-B05B-AA09426D6D6A}
+	EndGlobalSection
+EndGlobal
