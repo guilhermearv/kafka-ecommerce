@@ -38,8 +38,8 @@ namespace common_kafka
                         var schemaParser = (RecordSchema)RecordSchema.Parse(schema.SchemaString);
                         var record = new GenericRecord(schemaParser);
 
-                        record.Add("file", FileName);
-                        record.Add("uuid", Uuid);
+                        record.Add("file", "teste.pdf");
+                        record.Add("uuid", "Uuid");
 
                         var message = new Message<string, GenericRecord> { Value = record };
                         producer.ProduceAsync(Topic, message).GetAwaiter().GetResult();
