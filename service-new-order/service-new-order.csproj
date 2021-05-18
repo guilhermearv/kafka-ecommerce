@@ -6,4 +6,8 @@
     <RootNamespace>service_new_order</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\common-kafka\common-kafka.csproj" />
+  </ItemGroup>
+
 </Project>
