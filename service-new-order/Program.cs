@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace service_new_order
@@ -14,12 +15,12 @@ namespace service_new_order
             kafkaDispatcher.MessageError += MessageError;
 
             Order order = new Order();
-            order.email = RandomString(8) + "@email.com";
 
             for (int i = 0; i < 10; i++)
             {
+                order.email = RandomString(8) + "@email.com";
                 order.orderId = Guid.NewGuid().ToString();
-                order.amount = (random.Next(52) * 5000 + 1);
+                order.amount = (random.Next(20) * 500 + 1);
                 var value = JsonConvert.SerializeObject(order);
                 kafkaDispatcher.Send("ECOMMERCE_NEW_ORDER", value);
 
@@ -28,6 +29,9 @@ namespace service_new_order
                 value = JsonConvert.SerializeObject(value2);
                 kafkaDispatcher.Send("ECOMMERCE_SEND_EMAIL", value);
             }
+
+            Console.WriteLine("Order finish");
+            Console.ReadKey();
         }
 
         private static Random random = new Random();

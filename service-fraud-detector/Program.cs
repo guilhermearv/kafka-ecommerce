@@ -30,7 +30,10 @@ namespace service_fraud_detector
             Console.WriteLine(record.Partition);
             Console.WriteLine(record.Offset);
 
-            var order = JsonConvert.DeserializeObject<Order>(record.Message.Value.ToString());
+            Order order = new Order();
+            order.orderId = record.Message.Value["orderId"].ToString();
+            order.amount = Convert.ToInt32(record.Message.Value["amount"]);
+            order.email = record.Message.Value["email"].ToString();
             if (isFraud(order))
             {
                 Console.WriteLine("Order is a fraud!!!!!" + order);

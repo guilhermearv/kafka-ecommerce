@@ -10,7 +10,7 @@ namespace service_log
         static void Main()
         {
             KafkaService kafkaService = new KafkaService();
-            kafkaService.Subscribe = "ECOMMERCE.*";
+            kafkaService.Subscribe = "^ECOMMERCE.*";
             kafkaService.GroupId = "ECOMMERCE_LOG_GROUP";
             kafkaService.MessageResult += MessageResult;
             kafkaService.MessageError += MessageError;
