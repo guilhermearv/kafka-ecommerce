@@ -7,10 +7,11 @@ using Avro.Generic;
 using Confluent.Kafka;
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
+using Newtonsoft.Json;
 
 namespace common_kafka
 {
-    class KafkaDispatcher
+    public class KafkaDispatcher
     {
         public string KAFKA_SCHEMA_REGISTRY_URL { get; private set; }
         public string KAFKA_SCHEMA_REGISTRY_AUTH { get; private set; }
@@ -23,7 +24,7 @@ namespace common_kafka
             KAFKA_URL_SERVER_URL = "localhost:9092";
         }
 
-        void Send(string Topic)
+        public void Send(string Topic, string value)
         {
             try
             {
@@ -37,9 +38,11 @@ namespace common_kafka
                         var schema = schemaRegistry.GetLatestSchemaAsync($"{Topic}-value").GetAwaiter().GetResult();
                         var schemaParser = (RecordSchema)RecordSchema.Parse(schema.SchemaString);
                         var record = new GenericRecord(schemaParser);
-
-                        record.Add("file", "teste.pdf");
-                        record.Add("uuid", "Uuid");
+                        var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(value);
+                        foreach (var item in values)
+                        {
+                            record.Add(item.Key.ToString(), item.Value);
+                        }
 
                         var message = new Message<string, GenericRecord> { Value = record };
                         producer.ProduceAsync(Topic, message).GetAwaiter().GetResult();
@@ -48,12 +51,14 @@ namespace common_kafka
             }
             catch (ProduceException<Null, string> e)
             {
-                
+                this.MessageError?.Invoke(this, string.Format("Delivery failed: {0}", e.Error.Reason));
             }
             catch (Exception exception)
             {
-                
+                this.MessageError?.Invoke(this, string.Format("exception.Message: {0} exception.StackTrace: {1}", exception.Message, exception.StackTrace));
             }
         }
+
+        public event EventHandler<string> MessageError;
     }
 }

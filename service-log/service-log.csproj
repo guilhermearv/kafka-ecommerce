@@ -6,4 +6,8 @@
     <RootNamespace>service_log</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\common-kafka\common-kafka.csproj" />
+  </ItemGroup>
+
 </Project>
