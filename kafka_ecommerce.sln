@@ -3,20 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-email", "service-email\service-email.csproj", "{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "service-email", "service-email\service-email.csproj", "{298FB5FC-FE26-41CA-86EA-B683F0DFC17B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-fraud-detector", "service-fraud-detector\service-fraud-detector.csproj", "{D27D0769-ABE4-4975-A60A-A8B387B35866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "service-fraud-detector", "service-fraud-detector\service-fraud-detector.csproj", "{D27D0769-ABE4-4975-A60A-A8B387B35866}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-log", "service-log\service-log.csproj", "{0202A53E-F073-4236-BF3D-873B4E88F195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "service-log", "service-log\service-log.csproj", "{0202A53E-F073-4236-BF3D-873B4E88F195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-new-order", "service-new-order\service-new-order.csproj", "{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "service-new-order", "service-new-order\service-new-order.csproj", "{3A1ED72B-58AF-4325-A6FF-F64CFCE401C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common-kafka", "common-kafka\common-kafka.csproj", "{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common-kafka", "common-kafka\common-kafka.csproj", "{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC1AEC0B-3CBD-4DC1-9266-58FC423F5419}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "service-http-ecommerce", "service-http-ecommerce\service-http-ecommerce.csproj", "{D6F831ED-1CB0-47E6-90CB-EB3C93650805}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3724DFCD-7FDA-4E43-84B6-60E4407DCDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F831ED-1CB0-47E6-90CB-EB3C93650805}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F831ED-1CB0-47E6-90CB-EB3C93650805}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F831ED-1CB0-47E6-90CB-EB3C93650805}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F831ED-1CB0-47E6-90CB-EB3C93650805}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

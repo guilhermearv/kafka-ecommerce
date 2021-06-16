@@ -3,7 +3,9 @@ using Confluent.Kafka;
 using Confluent.Kafka.SyncOverAsync;
 using Confluent.SchemaRegistry;
 using Confluent.SchemaRegistry.Serdes;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -75,7 +77,12 @@ namespace common_kafka
             }
             catch (Exception exception)
             {
-                this.MessageError?.Invoke(this, string.Format("exception.Message: {0} exception.StackTrace: {1}", exception.Message, exception.StackTrace));
+                KafkaDispatcher kafkaDispatcher = new KafkaDispatcher();
+                kafkaDispatcher.MessageError += MessageError;
+
+                ExceptionMessage exceptionMessage = new ExceptionMessage();
+                exceptionMessage.Message = string.Format("exception.Message: {0} exception.StackTrace: {1}", exception.Message, exception.StackTrace);
+                kafkaDispatcher.Send("ECOMMERCE_DEADLETTER", JsonConvert.SerializeObject(exceptionMessage));
             }
 
             return Task.CompletedTask;
